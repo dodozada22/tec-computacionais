@@ -17,6 +17,8 @@ let historiaFinal = "";
 botaoIniciar.addEventListener('click', iniciaJogo);
 
 function iniciaJogo() {
+
+    
     atual = 0;
     historiaFinal = "";
     telaInicial.style.display = 'none';
@@ -25,6 +27,8 @@ function iniciaJogo() {
     caixaResultado.classList.remove("mostrar");
     mostraPergunta();
 }
+
+
 
 function mostraPergunta() {
     if (atual >= perguntas.length) {
@@ -37,6 +41,7 @@ function mostraPergunta() {
     mostraAlternativas();
 }
 
+
 function mostraAlternativas() {
     for (const alternativa of perguntaAtual.alternativas) {
         const botaoAlternativas = document.createElement("button");
@@ -44,7 +49,11 @@ function mostraAlternativas() {
         botaoAlternativas.addEventListener("click", () => respostaSelecionada(alternativa));
         caixaAlternativas.appendChild(botaoAlternativas);
     }
+
+    
 }
+
+
 
 function respostaSelecionada(opcaoSelecionada) {
     const afirmacoes = aleatorio(opcaoSelecionada.afirmacao);
@@ -56,6 +65,8 @@ function respostaSelecionada(opcaoSelecionada) {
         return;
     }
     mostraPergunta();
+
+    
 }
 
 function mostraResultado() {
@@ -66,11 +77,14 @@ function mostraResultado() {
     botaoJogarNovamente.addEventListener("click", jogaNovamente);
 }
 
+
 function jogaNovamente() {
     atual = 0;
     historiaFinal = "";
     caixaResultado.classList.remove("mostrar");
     mostraPergunta();
+
+    
 }
 
 function substituiNome() {
